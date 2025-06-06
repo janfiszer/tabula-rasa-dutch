@@ -1,0 +1,26 @@
+Cambio Card Game
+
+Rules
+The Basics
+Cambio is played with 2 or more players. It’s easy to learn and quick to play!
+You start by dealing four cards to each player face down in a 2×2 pattern and leaving the deck in the middle.
+	
+Objective
+The goal is to have the least amount of points by the end of the game. You may only play the game with one hand. Each player is given one chance before the first player picks a card from the deck to view the 2 cards closest to them and memorize them. After that you may not peek again unless you pull a 7 or 8.
+
+Start
+
+Deal four cards to each player and face them down in a 2×2 pattern and leave the deck in the middle. 
+Each player is given one chance to check out the 2 cards closest to them and memorize them. After that you may not peek again unless you pull a 7 or 8.
+ 
+
+The game starts by the first player to the right of the dealer picking a card from the deck. You may swap the card you pull with one of your own. This would be in order to reduce the amount of points you have.
+
+Points
+Face cards: 10 points
+Ace: 1
+Red King: -1
+Joker: 0
+
+Winning
+In order to win, one player has to call “Cambio” during their turn and cannot play a card if they call it. This must be done prior to the next player touching the deck. Once the player calls Cambio, the rest of the players get one more turn to play before everyone flips their cards and adds up their points. The person with the least amount of points wins. If there is a tie, the player who didn’t call Cambio wins. If there is a tie between two players who didn’t call Cambio, the player with the least value cards wins. (i.e. Joker, Ace and Red King, 2 = Joker, Ace would win)
