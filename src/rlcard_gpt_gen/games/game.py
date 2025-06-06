@@ -1,12 +1,14 @@
+import numpy as np
+
 from src.rlcard_gpt_gen.games.dealer import CambioDealer
 from src.rlcard_gpt_gen.games.player import CambioPlayer
 from src.rlcard_gpt_gen import config
 
 
 class CambioGame:
-    def __init__(self):
-        self.players = []
-        self.player_discards = {i: [] for i in range(config.N_PLAYERS)}  # Track discards per player
+    def __init__(self, num_players=config.N_PLAYERS):
+        self.num_players = num_players
+        self.player_discards = {i: [] for i in range(self.num_players)}  # Track discards per player
 
         self.dealer = CambioDealer()
         
@@ -24,16 +26,21 @@ class CambioGame:
         self.drawn_card = None  # Store the currently drawn card
         self.draw_phase = True  # Track if we're in drawing phase
 
+        self._set_up_game()
 
-    def init_game(self):
+    def _set_up_game(self):
+        self.players = [CambioPlayer(i) for i in range(self.num_players)]
+
         self.dealer.shuffle()
-        self.players = [CambioPlayer(i) for i in range(config.N_PLAYERS)]  # extendable
         for player in self.players:
             player.receive_initial_cards(self.dealer.deal_four())
 
         self.current_player = 0
         self.called_cambio = False
         self.turns_after_cambio = 0
+
+    def init_game(self):
+        self._set_up_game()
         return self.get_state(self.current_player), self.current_player
     
     def step(self, action):
@@ -134,7 +141,7 @@ class CambioGame:
         winner_idx = scores.index(min_score)
         payoffs = [-1] * len(self.players)
         payoffs[winner_idx] = 1
-        return payoffs
+        return np.array(payoffs)  # Return list of lists when game is over
 
     def next_player(self):
         return (self.current_player + 1) % len(self.players)
